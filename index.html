@@ -3,19 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع إدارة المتاجر</title>
+    <title>منصة إدارة المتاجر</title>
     <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS -->
 </head>
 <body>
     <header>
-        <h1>مرحبا بك في منصة إدارة المتاجر</h1>
-        <p>إليك قائمة بالمتاجر والمنتجات.</p>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Volkswagen_logo_2019.svg/1024px-Volkswagen_logo_2019.svg.png" alt="Volkswagen Logo" width="100"> <!-- شعار فولكس فاجن -->
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="ابحث هنا...">
+            <button onclick="searchFunction()">بحث</button>
+        </div>
     </header>
 
-    <!-- يمكن إضافة محتوى إضافي هنا مثل قائمة المتاجر أو المنتجات -->
+    <main>
+        <section class="stores">
+            <h2>قائمة المتاجر</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم المتجر</th>
+                        <th>الموقع</th>
+                        <th>حالة الطلب</th>
+                        <th>التفاصيل</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>المتجر الأول</td>
+                        <td>المدينة 1</td>
+                        <td>قيد المعالجة</td>
+                        <td><button onclick="navigateToPage('store1')">عرض التفاصيل</button></td>
+                    </tr>
+                    <tr>
+                        <td>المتجر الثاني</td>
+                        <td>المدينة 2</td>
+                        <td>تم الشحن</td>
+                        <td><button onclick="navigateToPage('store2')">عرض التفاصيل</button></td>
+                    </tr>
+                    <tr>
+                        <td>المتجر الثالث</td>
+                        <td>المدينة 3</td>
+                        <td>في الانتظار</td>
+                        <td><button onclick="navigateToPage('store3')">عرض التفاصيل</button></td>
+                    </tr>
+                    <tr>
+                        <td>المتجر الرابع</td>
+                        <td>المدينة 4</td>
+                        <td>تم التوصيل</td>
+                        <td><button onclick="navigateToPage('store4')">عرض التفاصيل</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="order-form">
+            <h2>إضافة طلب جديد</h2>
+            <form id="orderForm">
+                <label for="order-name">اسم الطلب:</label>
+                <input type="text" id="order-name" name="order-name" required><br><br>
+
+                <label for="order-date">تاريخ التسليم:</label>
+                <input type="date" id="order-date" name="order-date" required><br><br>
+
+                <label for="order-details">تفاصيل الطلب:</label><br>
+                <textarea id="order-details" name="order-details" rows="4" required></textarea><br><br>
+
+                <button type="submit">إضافة الطلب</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 منصة إدارة المتاجر</p>
     </footer>
-</body>
-</html>
+
+    <script>
+        // دالة البحث
+        function searchFunction() {
+            let searchTerm = document.getElementById("search").value.toLowerCase();
+            let rows = document.querySelectorAll("table tbody tr");
+            rows.forEach(row => {
+                let cells = row.querySelectorAll("td");
+                let found = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(searchTerm));
+                row.style.display = found ? "" : "none";
+            });
+        }
+
+        // دالة التنقل بين صفحات المتاجر
+        function navigateToPage(store) {
+            alert("عرض تفاصيل " + store);
+        }
+
+        // دالة إضافة الطلب
+      

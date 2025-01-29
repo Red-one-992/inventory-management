@@ -1,23 +1,62 @@
+/* تنسيقات الصفحة */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* خلفية بيضاء مع لون أزرق فاتح */
     margin: 0;
     padding: 0;
 }
 
+/* تنسيقات الرأس */
 header {
-    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0044cc; /* خلفية باللون الأزرق الداكن */
     color: white;
-    text-align: center;
-    padding: 20px 0;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* تنسيقات الشعار */
+header .logo img {
+    max-width: 100%;
 }
+
+/* تنسيقات شريط البحث */
+header .search-bar {
+    display: flex;
+}
+
+header .search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+header .search-bar button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0066cc; /* لون أزرق لأزرار البحث */
+    color: white;
+    border: none;
+}
+
+/* تنسيقات الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* تنسيقات النموذج */
+.order-form {
+  
