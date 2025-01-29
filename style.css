@@ -1,62 +1,90 @@
-/* تنسيقات الصفحة */
+/* ضبط الخطوط والألوان */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* خلفية بيضاء مع لون أزرق فاتح */
-    margin: 0;
-    padding: 0;
+    background-color: #002D72; /* اللون الأزرق لفولكس فاجن */
+    color: white;
+    text-align: center;
 }
 
-/* تنسيقات الرأس */
+/* رأس الصفحة */
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #0044cc; /* خلفية باللون الأزرق الداكن */
-    color: white;
+    padding: 15px;
+    background: #005EA6;
 }
 
-/* تنسيقات الشعار */
-header .logo img {
-    max-width: 100%;
+.logo {
+    width: 60px;
 }
 
-/* تنسيقات شريط البحث */
-header .search-bar {
-    display: flex;
-}
-
-header .search-bar input {
+/* شريط البحث */
+#searchBar {
     padding: 10px;
+    width: 250px;
     font-size: 16px;
-    margin-right: 10px;
-}
-
-header .search-bar button {
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #0066cc; /* لون أزرق لأزرار البحث */
-    color: white;
+    border-radius: 5px;
     border: none;
 }
 
-/* تنسيقات الجدول */
+/* شريط التنقل */
+nav {
+    margin: 20px;
+}
+
+nav button {
+    margin: 10px;
+    padding: 10px 15px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background: #FFD700;
+}
+
+/* تصميم الجدول */
 table {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     border-collapse: collapse;
-    margin-top: 20px;
+    background: white;
+    color: black;
+    border-radius: 8px;
 }
 
-table th, table td {
-    border: 1px solid #ccc;
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #005EA6;
+    color: white;
+}
+
+/* تصميم النموذج */
+form {
+    margin: 20px;
+}
+
+input, button {
     padding: 10px;
-    text-align: left;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
-table th {
-    background-color: #f4f4f4;
+button {
+    background: #FFD700;
+    border: none;
+    cursor: pointer;
 }
 
-/* تنسيقات النموذج */
-.order-form {
-  
+button:hover {
+    background: #FFA500;
+}
